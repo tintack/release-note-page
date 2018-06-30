@@ -1,0 +1,409 @@
+{
+  "org": "grpc",
+  "repo": "grpc-go",
+  "version": "1.12",
+  "sections": [
+    {
+      "name": "API Changes",
+      "label_name": "API Change",
+      "entries": [
+        {
+          "issue_number": 2009,
+          "title":
+            "credentials/alts: Add ServiceOption for server-side ALTS creation",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2009",
+          "user": {
+            "avatar_url":
+              "https://avatars2.githubusercontent.com/u/1832622?v=4",
+            "html_url": "https://github.com/cesarghali",
+            "login": "cesarghali"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        }
+      ]
+    },
+    {
+      "name": "Behavior Changes",
+      "label_name": "Behavior Change",
+      "entries": [
+        {
+          "issue_number": 2030,
+          "title":
+            "http2Client: send reset stream when closing the stream on protocol error",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2030",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        }
+      ]
+    },
+    {
+      "name": "New Features",
+      "label_name": "Feature",
+      "entries": [
+        {
+          "issue_number": 2019,
+          "title":
+            "server: export ServerTransportStreamFromContext for unary interceptors to control headers/trailers",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2019",
+          "user": {
+            "avatar_url":
+              "https://avatars1.githubusercontent.com/u/26072277?v=4",
+            "html_url": "https://github.com/dfawley",
+            "login": "dfawley"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 2010,
+          "title": "client: introduce WithDisableServiceConfig DialOption",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2010",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1940,
+          "title": "metadata: Add Get, Set, and Append methods to metadata.MD",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1940",
+          "user": {
+            "avatar_url":
+              "https://avatars0.githubusercontent.com/u/20138116?v=4",
+            "html_url": "https://github.com/zkry",
+            "login": "zkry"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": true
+        },
+        {
+          "issue_number": 1957,
+          "title":
+            "grpclb: cache SubConns for 10 seconds after it is removed from the backendlist",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1957",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1811,
+          "title": "channelz: stage 1 - registration and deletion",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1811",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1919,
+          "title": "channelz: stage 3 - server implementation",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1919",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1969,
+          "title": "stickiness: add stickiness support",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1969",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1883,
+          "title": "clientconn: add support for unix network in DialContext.",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1883",
+          "user": {
+            "avatar_url":
+              "https://avatars0.githubusercontent.com/u/1249749?v=4",
+            "html_url": "https://github.com/hexfusion",
+            "login": "hexfusion"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": true
+        },
+        {
+          "issue_number": 1961,
+          "title":
+            "server: add grpc.Method function for extracting method from context",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1961",
+          "user": {
+            "avatar_url":
+              "https://avatars1.githubusercontent.com/u/26072277?v=4",
+            "html_url": "https://github.com/dfawley",
+            "login": "dfawley"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1909,
+          "title": "channelz: stage 2 - metric collection",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1909",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        }
+      ]
+    },
+    {
+      "name": "Performance Improvements",
+      "label_name": "Performance",
+      "entries": [
+        {
+          "issue_number": 1962,
+          "title":
+            "transport: refactor to reduce lock contention and improve performance",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1962",
+          "user": {
+            "avatar_url":
+              "https://avatars1.githubusercontent.com/u/20670279?v=4",
+            "html_url": "https://github.com/MakMukhi",
+            "login": "MakMukhi"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        }
+      ]
+    },
+    {
+      "name": "Bug Fixes",
+      "label_name": "Bug",
+      "entries": [
+        {
+          "issue_number": 2026,
+          "title": "client: ignore \"user-agent\" if set in outgoing metadata",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2026",
+          "user": {
+            "avatar_url":
+              "https://avatars1.githubusercontent.com/u/20670279?v=4",
+            "html_url": "https://github.com/MakMukhi",
+            "login": "MakMukhi"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1979,
+          "title":
+            "createTransport: check for SHUTDOWN before assigning TransientFailure to ac.state",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1979",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/426013?v=4",
+            "html_url": "https://github.com/lyuxuan",
+            "login": "lyuxuan"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1948,
+          "title":
+            "client: Fix race when using both client-side default CallOptions and per-call CallOptions",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1948",
+          "user": {
+            "avatar_url":
+              "https://avatars0.githubusercontent.com/u/2035234?v=4",
+            "html_url": "https://github.com/jhump",
+            "login": "jhump"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "label_name": "Documentation",
+      "entries": [
+        {
+          "issue_number": 1971,
+          "title":
+            "documentation: mark compresser and decompresser as deprecated",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1971",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 2006,
+          "title": "documentation: add instructions for running tests locally",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2006",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1951,
+          "title": "Mark old balancer and naming APIs as deprecated",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1951",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1982,
+          "title":
+            "documentation: mention peer will only be populated after RPC completes",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1982",
+          "user": {
+            "avatar_url": "https://avatars2.githubusercontent.com/u/960845?v=4",
+            "html_url": "https://github.com/menghanl",
+            "login": "menghanl"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": false
+        },
+        {
+          "issue_number": 1981,
+          "title": "resolver/dns: Typo in lookupHost failure warning",
+          "html_url": "https://github.com/grpc/grpc-go/pull/1981",
+          "user": {
+            "avatar_url": "https://avatars1.githubusercontent.com/u/187831?v=4",
+            "html_url": "https://github.com/keegancsmith",
+            "login": "keegancsmith"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": true
+        },
+        {
+          "issue_number": 2003,
+          "title": "documentation: add OAuth2 doc and example",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2003",
+          "user": {
+            "avatar_url":
+              "https://avatars1.githubusercontent.com/u/1175430?v=4",
+            "html_url": "https://github.com/enocom",
+            "login": "enocom"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": true
+        },
+        {
+          "issue_number": 2027,
+          "title":
+            "Fix \"deprecated\" function godoc comments to match standard formatting",
+          "html_url": "https://github.com/grpc/grpc-go/pull/2027",
+          "user": {
+            "avatar_url":
+              "https://avatars3.githubusercontent.com/u/15604894?v=4",
+            "html_url": "https://github.com/Chyroc",
+            "login": "Chyroc"
+          },
+          "milestone": {
+            "id": 3229697,
+            "title": "1.12 Release"
+          },
+          "special_thanks": true
+        }
+      ]
+    }
+  ]
+}
