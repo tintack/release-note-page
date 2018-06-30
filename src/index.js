@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/release/:org/:repo/:version" component={Release} />
+        <Route path="/release/:org?/:repo?/:version?" component={Release} />
       </div>
     </Router>
   );
