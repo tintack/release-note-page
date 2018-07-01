@@ -13,6 +13,9 @@ function entriesToMarkdown(entries) {
 }
 
 function notesToMarkdown(notes) {
+  if (!notes) {
+    return "no data";
+  }
   return notes.sections.reduce(function(total, current) {
     return (
       total + "# " + current.name + "\n" + entriesToMarkdown(current.entries)
