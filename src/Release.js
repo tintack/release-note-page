@@ -39,7 +39,7 @@ import {
 } from "react-sortable-hoc";
 
 import axios from "axios";
-import queryString from "query-string";
+import queryString from "qs";
 
 import { notesToMarkdown } from "./util.js";
 import testdata from "./assets/testdata.json";
