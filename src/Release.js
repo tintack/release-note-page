@@ -12,6 +12,7 @@ import {
   Divider,
   Grid,
   Icon,
+  IconButton,
   Input,
   List,
   ListItem,
@@ -21,7 +22,14 @@ import {
   Toolbar,
   Typography
 } from "@material-ui/core";
-import { ExpandMore, ChevronRight, EventNote } from "@material-ui/icons";
+import {
+  ExpandMore,
+  ChevronRight,
+  EventNote,
+  Refresh,
+  ArrowDownward
+} from "@material-ui/icons";
+import withWidth, { isWidthDown } from "@material-ui/core/withWidth";
 
 import update from "immutability-helper";
 import {
@@ -33,25 +41,37 @@ import {
 import { notesToMarkdown } from "./util.js";
 import testdata from "./assets/testdata.json";
 
-const Header = ({ title, onMarkdown, onReload }) => (
+const Header = withWidth()(({ title, onMarkdown, onReload, width }) => (
   <AppBar position="sticky">
     <Toolbar>
       <Icon style={{ marginRight: 10 }}>
         <EventNote />
       </Icon>
-      <Typography variant="title" color="inherit" style={{ flex: 1 }}>
+      <Typography variant="title" noWrap color="inherit" style={{ flex: 1 }}>
         {title}
       </Typography>
 
-      <Button color="inherit" onClick={onReload}>
-        Reload
-      </Button>
-      <Button color="inherit" onClick={onMarkdown}>
-        Markdown
-      </Button>
+      {isWidthDown("xs", width) ? (
+        <IconButton color="inherit" onClick={onReload}>
+          <Refresh />
+        </IconButton>
+      ) : (
+        <Button color="inherit" onClick={onReload}>
+          Reload
+        </Button>
+      )}
+      {isWidthDown("xs", width) ? (
+        <IconButton color="inherit" onClick={onMarkdown}>
+          <ArrowDownward />
+        </IconButton>
+      ) : (
+        <Button color="inherit" onClick={onMarkdown}>
+          Markdown
+        </Button>
+      )}
     </Toolbar>
   </AppBar>
-);
+));
 
 const MarkdownDialog = ({ open, title, content, onClose }) => (
   <Dialog fullScreen open={open} onClose={onClose}>
