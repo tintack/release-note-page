@@ -217,7 +217,9 @@ export default class extends React.Component {
   onReload = () => {
     const { match } = this.props;
     const { org, repo, version } = match.params;
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props.location.search, {
+      ignoreQueryPrefix: true
+    });
     const { token } = parsed;
 
     this.setState({
