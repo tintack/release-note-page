@@ -262,7 +262,7 @@ export default class extends React.Component {
     });
 
     this.setState({
-      testdata: update(dataT, {
+      data: update(dataT, {
         sections: {
           $splice: [[sectionIndex, 1, newSection]]
         }
