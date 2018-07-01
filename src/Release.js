@@ -38,6 +38,8 @@ import {
   arrayMove
 } from "react-sortable-hoc";
 
+import axios from "axios";
+
 import { notesToMarkdown } from "./util.js";
 import testdata from "./assets/testdata.json";
 
@@ -147,7 +149,7 @@ const EntryList = SortableContainer(({ entries }) => (
   <List component="div" disablePadding>
     {entries.map((entry, i, arr) => {
       return (
-        <React.Fragment>
+        <React.Fragment key={entry.issue_number}>
           <Entry index={i} entry={entry} />
           {arr.length - 1 === i ? null : <Divider component="li" />}
         </React.Fragment>
@@ -201,7 +203,7 @@ class Section extends React.Component {
 }
 
 export default class extends React.Component {
-  state = { data: testdata, markdownOpen: false };
+  state = { loading: false, markdownOpen: false };
 
   onMarkdownOpen = () => {
     this.setState({ markdownOpen: true });
@@ -212,12 +214,40 @@ export default class extends React.Component {
   };
 
   onReload = () => {
-    this.setState({ data: testdata });
+    const { match } = this.props;
+    const { org, repo, version } = match.params;
+
+    this.setState({
+      data: undefined,
+      loading: true
+    });
+    axios
+      .get(`/api/release`, {
+        params: {
+          org: org,
+          repo: repo,
+          version: version
+        }
+      })
+      .then(response => {
+        const { data } = response;
+        const { sections } = data;
+        if (sections) {
+          this.setState({ data: data, loading: false });
+        } else {
+          throw new Error("sections missing in received data");
+        }
+      })
+      .catch(e => {
+        console.log(e);
+        alert(`failed to load: ${e}, showing testdata`);
+        this.setState({ data: testdata, loading: false });
+      });
   };
 
   onEntryDragEnd = (sectionIndex, oldEntryIndex, newEntryIndex) => {
-    const testdataT = this.state.testdata;
-    const { sections } = testdataT;
+    const dataT = this.state.data;
+    const { sections } = dataT;
     const section = sections[sectionIndex];
     const { entries } = section;
     const newSection = update(section, {
@@ -225,7 +255,7 @@ export default class extends React.Component {
     });
 
     this.setState({
-      testdata: update(testdataT, {
+      testdata: update(dataT, {
         sections: {
           $splice: [[sectionIndex, 1, newSection]]
         }
@@ -237,12 +267,10 @@ export default class extends React.Component {
     const { match } = this.props;
     const { org, repo, version } = match.params;
 
-    const data = this.state.data;
-
+    const { data, markdownOpen, loading } = this.state;
     const onEntryDragEnd = this.onEntryDragEnd;
     const onMarkdownOpen = this.onMarkdownOpen;
     const onMarkdownClose = this.onMarkdownClose;
-    const { markdownOpen } = this.state;
     const onReload = this.onReload;
 
     return (
@@ -253,26 +281,30 @@ export default class extends React.Component {
           onReload={onReload}
         />
         <Grid container justify="center">
-          {
-            // <Grid item xs={8}>
-            //   <CircularProgress size={100} style={{ margin: "auto" }} />
-            // </Grid>
-          }
+          {loading ? (
+            <Grid item xs={8}>
+              <CircularProgress size={100} style={{ margin: "auto" }} />
+            </Grid>
+          ) : null}
           <Grid item xs={12} md={10} lg={8}>
             {data ? (
-              <List component="div" padding={0}>
-                {data.sections.map(function(section, index) {
-                  const { name } = section;
-                  return (
-                    <Section
-                      key={name}
-                      index={index}
-                      onEntryDragEnd={onEntryDragEnd}
-                      {...section}
-                    />
-                  );
-                })}
-              </List>
+              data.sections ? (
+                <List component="div" padding={0}>
+                  {data.sections.map(function(section, index) {
+                    const { name } = section;
+                    return (
+                      <Section
+                        key={name}
+                        index={index}
+                        onEntryDragEnd={onEntryDragEnd}
+                        {...section}
+                      />
+                    );
+                  })}
+                </List>
+              ) : (
+                <h1>no data.sections</h1>
+              )
             ) : (
               <h1>no data</h1>
             )}
@@ -280,7 +312,7 @@ export default class extends React.Component {
         </Grid>
         <MarkdownDialog
           open={markdownOpen}
-          title={`Release Note v${version}.0`}
+          title={`Release Note ${version}.0`}
           content={notesToMarkdown(testdata)}
           onClose={onMarkdownClose}
         />
