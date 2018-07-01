@@ -161,7 +161,7 @@ class Section extends React.Component {
     const shouldCancelStart = this.shouldCancelStart;
 
     return (
-      <div style={{ margin: 20 }}>
+      <div style={{ marginBottom: 20 }}>
         <Button onClick={this.handleClick}>
           {this.state.open ? <ExpandMore /> : <ChevronRight />}
           <ListItemText primary={name} />
@@ -181,7 +181,7 @@ class Section extends React.Component {
 }
 
 export default class extends React.Component {
-  state = { markdownOpen: false };
+  state = { data: testdata, markdownOpen: false };
 
   onMarkdownOpen = () => {
     this.setState({ markdownOpen: true });
@@ -240,7 +240,7 @@ export default class extends React.Component {
           }
           <Grid item xs={12} md={10} lg={8}>
             {data ? (
-              <List component="div">
+              <List component="div" padding={0}>
                 {data.sections.map(function(section, index) {
                   const { name } = section;
                   return (
