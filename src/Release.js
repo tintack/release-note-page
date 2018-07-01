@@ -230,12 +230,15 @@ export default class extends React.Component {
         }
       })
       .then(response => {
+        console.log(JSON.stringify(response));
         const { data } = response;
         const { sections } = data;
         if (sections) {
           this.setState({ data: data, loading: false });
         } else {
-          throw new Error("sections missing in received data");
+          throw new Error(
+            `sections missing in received data ${JSON.stringify(response)}`
+          );
         }
       })
       .catch(e => {
