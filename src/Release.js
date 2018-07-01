@@ -39,6 +39,7 @@ import {
 } from "react-sortable-hoc";
 
 import axios from "axios";
+import queryString from "query-string";
 
 import { notesToMarkdown } from "./util.js";
 import testdata from "./assets/testdata.json";
@@ -216,6 +217,8 @@ export default class extends React.Component {
   onReload = () => {
     const { match } = this.props;
     const { org, repo, version } = match.params;
+    const parsed = queryString.parse(this.props.location.search);
+    const { token } = parsed;
 
     this.setState({
       data: undefined,
@@ -226,7 +229,8 @@ export default class extends React.Component {
         params: {
           org: org,
           repo: repo,
-          version: version
+          version: version,
+          token: token
         }
       })
       .then(response => {
