@@ -320,7 +320,7 @@ export default class extends React.Component {
         <MarkdownDialog
           open={markdownOpen}
           title={`Release Note ${version}.0`}
-          content={notesToMarkdown(testdata)}
+          content={notesToMarkdown(data)}
           onClose={onMarkdownClose}
         />
       </React.Fragment>
