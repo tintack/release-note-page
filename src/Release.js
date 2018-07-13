@@ -17,6 +17,10 @@ import testdata from "./assets/testdata.json";
 export default class extends React.Component {
   state = { loading: false, markdownOpen: false };
 
+  componentDidMount() {
+    this.onReload();
+  }
+
   onMarkdownOpen = () => {
     this.setState({ markdownOpen: true });
   };

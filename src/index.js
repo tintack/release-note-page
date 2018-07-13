@@ -10,7 +10,7 @@ const Home = () => (
   <div>
     <h2>Home</h2>
 
-    <Link to="/release">Release</Link>
+    <Link to="/release/grpc/grpc-go/v1.14">Release</Link>
   </div>
 );
 
