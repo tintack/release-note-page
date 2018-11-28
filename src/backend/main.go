@@ -83,7 +83,7 @@ func main() {
 	flag.Parse()
 
 	r := gin.New()
-	path, _ := filepath.Abs("./build")
+	path, _ := filepath.Abs("../../build")
 	r.Use(static.Serve("/", static.LocalFile(path, true)))
 	r.LoadHTMLGlob(filepath.Join(path, "index.html"))
 	r.NoRoute(func(c *gin.Context) {
