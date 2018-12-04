@@ -7,5 +7,5 @@ cd release-note-page
 # npm run build
 
 cd src/backend
-GITHUB_TOKEN=<github_token> go run src/backend/main.go
+GITHUB_TOKEN=<github_token> go run main.go
 ```
