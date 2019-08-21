@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -80,6 +81,11 @@ func releaseHandler(c *gin.Context) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
 	flag.Parse()
 
 	r := gin.New()
@@ -107,5 +113,5 @@ func main() {
 
 	// Handle all requests using net/http
 	http.Handle("/", r)
-	r.Run(":3000")
+	r.Run(":" + port)
 }
