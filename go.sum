@@ -170,6 +170,8 @@ github.com/menghanl/release-git-bot v0.0.0-20210615180133-e09138cfac69 h1:lMi1TB
 github.com/menghanl/release-git-bot v0.0.0-20210615180133-e09138cfac69/go.mod h1:RwdauF/Grb5EmK7pVpyrSATel2usQxn2d1HNEdFWpxM=
 github.com/menghanl/release-git-bot v0.0.0-20210811230700-1049b6ae7a07 h1:oTgX6xxtwxutzToiH2C7FsFkvBcKlGtK89/NmYuwD9I=
 github.com/menghanl/release-git-bot v0.0.0-20210811230700-1049b6ae7a07/go.mod h1:RwdauF/Grb5EmK7pVpyrSATel2usQxn2d1HNEdFWpxM=
+github.com/menghanl/release-git-bot v0.0.0-20210811232005-a343fef71f6d h1:s8Kp0zn8pf0YozkHey4Pg3a1TeTLR4F6oi23ojjyzj8=
+github.com/menghanl/release-git-bot v0.0.0-20210811232005-a343fef71f6d/go.mod h1:RwdauF/Grb5EmK7pVpyrSATel2usQxn2d1HNEdFWpxM=
 github.com/mgutz/ansi v0.0.0-20170206155736-9520e82c474b h1:j7+1HpAFS1zy5+Q4qx1fWh90gTKwiN4QCGoY9TWyyO4=
 github.com/mgutz/ansi v0.0.0-20170206155736-9520e82c474b/go.mod h1:01TrycV0kFyexm33Z7vhZRXopbI8J3TDReVlkTgMUxE=
 github.com/mitchellh/go-homedir v1.1.0 h1:lukF9ziXFxDFPkA1vsr5zpc1XuPDn/wFntq5mG+4E0Y=
